@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Conheça os projetos e ações do Abraço Solidário.">
+
+    <title>Projetos | Abraço Solidário</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo">
+            Abraço Solidário
+        </a>
+
+        <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle-checkbox"
+        >
+
+        <label
+            for="menu-toggle"
+            class="menu-toggle"
+            aria-label="Abrir ou fechar menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav
+            class="navegacao"
+            aria-label="Navegação principal"
+        >
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">
+                        Início
+                    </a>
+                </li>
+
+                <li class="menu-item-dropdown">
+
+                    <a href="projetos.html">
+                        Projetos
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="projetos.html">
+                                Nossos projetos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="projetos.html">
+                                Histórias que Abraçam
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="projetos.html">
+                                Mãos que Criam
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="projetos.html">
+                                Música que Acolhe
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="cadastro.html">
+                        Seja voluntário
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main id="app">
+
+        <!-- TÍTULO -->
+
+        <section class="titulo-pagina">
+
+            <div class="conteudo">
+
+                <p class="destaque">
+                    NOSSAS AÇÕES
+                </p>
+
+                <h1>
+                    Projetos que aproximam e acolhem
+                </h1>
+
+                <p>
+                    Conheça algumas das iniciativas desenvolvidas
+                    pelo Abraço Solidário.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJETOS -->
+
+        <section class="secao">
+
+            <div class="conteudo">
+
+                <h2>
+                    Faça parte dessa iniciativa
+                </h2>
+
+                
+<div class="projetos" id="lista-projetos">
+
+    <!-- Modelo reutilizável de card -->
+    <template id="template-projeto">
+        <article class="projeto-card">
+
+            <div class="projeto-imagem">
+                <img src="" alt="">
+            </div>
+
+            <div class="projeto-conteudo">
+
+                <span class="badge badge-ativo">
+                    Projeto ativo
+                </span>
+
+                <span class="icone" aria-hidden="true"></span>
+
+                <h2 class="projeto-titulo"></h2>
+
+                <p class="projeto-descricao"></p>
+
+                <button
+                    type="button"
+                    class="botao botao-secundario abrir-modal"
+                >
+                    Saiba mais
+                </button>
+
+            </div>
+        </article>
+    </template>
+
+</div>
+
+
+        <!-- CHAMADA -->
+
+        <section class="chamada">
+
+            <div class="conteudo">
+
+                <h2>
+                    Quer participar?
+                </h2>
+
+                <p>
+                    Cadastre-se para conhecer as possibilidades
+                    de voluntariado.
+                </p>
+
+                <a
+                    href="cadastro.html"
+                    class="botao botao-claro"
+                >
+                    Quero ser voluntário
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL -->
+
+    <div
+        class="modal"
+        id="modal-projeto"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-titulo"
+        hidden
+    >
+
+        <div class="modal-conteudo">
+
+            <button
+                type="button"
+                class="fechar-modal"
+                aria-label="Fechar janela"
+            >
+                &times;
+            </button>
+
+            <span class="badge badge-ativo">
+                Projeto ativo
+            </span>
+
+            <h2 id="modal-titulo"></h2>
+
+            <p id="modal-texto"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+
+        <p>
+            &copy; 2026 Abraço Solidário — Projeto acadêmico fictício.
+        </p>
+
+    </footer>
+
+
+    <script type="module" src="../js/script.js"></script>
+
+</body>
+
+</html>
