@@ -29,9 +29,42 @@ export function iniciarNavegacao({
         }
 
         if (pagina === "inicio") {
-            app.innerHTML = conteudoInicio;
-            prepararModal();
-        } else {
+    try {
+        const resposta = await fetch("index.html");
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao carregar a página inicial.");
+        }
+
+        const html = await resposta.text();
+
+        const documento = new DOMParser().parseFromString(
+            html,
+            "text/html"
+        );
+
+        const conteudo = documento.querySelector("main");
+
+        if (!conteudo) {
+            throw new Error("Elemento main não encontrado.");
+        }
+
+        app.innerHTML = conteudo.innerHTML;
+        prepararModal(documento);
+
+    } catch (erro) {
+        console.error(erro);
+
+        app.innerHTML = `
+            <section class="secao">
+                <div class="conteudo">
+                    <h1>Não foi possível carregar a página inicial.</h1>
+                    <p>Confira se o Live Server está funcionando.</p>
+                </div>
+            </section>
+        `;
+    }
+} else {
             try {
                 const resposta = await fetch(arquivo);
                 if (!resposta.ok) throw new Error("Erro ao carregar a página.");
